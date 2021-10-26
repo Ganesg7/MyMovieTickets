@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie Tickets</title>
+    <style>
+
+        body{
+background-color: black;
+color: white;
+        }
+        button{
+            color: white;
+            opacity: 50%;
+        }
+        button:hover{
+            color: blue;
+            opacity: 100%;
+            
+        }
+
+
+
+        .lightsaber { position: relative; }
+
+.lightsaber label {
+	cursor: pointer;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 88;
+	text-indent: -9999px;
+	width: 15px;
+	height: 50px;
+	border-bottom: solid 4px grey;
+	border-top: solid 5px grey;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	background: rgb(226,226,226); /* Old browsers */
+	background: linear-gradient(to right, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* W3C */
+	background: -moz-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(226,226,226,1)), color-stop(50%,rgba(219,219,219,1)), color-stop(51%,rgba(209,209,209,1)), color-stop(100%,rgba(254,254,254,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=1 ); /* IE6-9 */
+}
+
+.lightsaber .switch {
+	background: #B94A37;
+	width: 5px;
+	height: 10px;
+	display: block;
+	position: absolute;
+	bottom: 25px;
+	left: 13px;
+	transition: left 200ms;
+	-moz-transition: left 200ms;
+	-webkit-transition: left 200ms;
+	-o-transition: left 200ms;
+	-ms-transition: left 200ms;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-o-border-radius: 10px;
+	-ms-border-radius: 10px;
+}
+
+.lightsaber input[type=checkbox] {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	-moz-opacity: 0;
+	-webkit-opacity: 0;
+	-o-opacity: 0;
+	-ms-opacity: 0;
+	z-index: 77;
+}
+
+.lightsaber .plasma {
+	transition: height 300ms,;
+	-moz-transition: height 300ms;
+	-webkit-transition: height 300ms;
+	-o-transition: height 300ms;
+	-ms-transition: height 300ms;
+	border-radius: 12px 12px 0 0;
+	position: absolute;
+	bottom: 55px;
+	left: 2px;
+	width: 10px;
+	display: block;
+	filter: blur(1px);
+	-moz-filter: blur(1px);
+	-webkit-filter: blur(1px);
+	-o-filter: blur(1px);
+	-ms-filter: blur(1px);
+	height: 0;
+}
+
+
+.lightsaber input[type=checkbox]:checked ~ div.plasma {
+	height: 250px;
+}
+
+.lightsaber input[type=checkbox]:hover ~ div.switch {
+	background: #c09853;
+	left: 12px;
+}
+
+.lightsaber input[type=checkbox]:checked ~ div.switch {
+	background: #468847;
+}
+
+
+.vader {
+	background: rgb(229,17,21); /* Old browsers */
+	background: linear-gradient(to right, rgba(229,17,21,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(229,17,21,1) 100%); /* W3C */
+	background: -moz-linear-gradient(left, rgba(229,17,21,1) 0%, rgba(254,254,254,1) 30%, rgba(254,254,254,1) 47%, rgba(254,254,254,1) 71%, rgba(229,17,21,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(229,17,21,1)), color-stop(30%,rgba(254,254,254,1)), color-stop(47%,rgba(254,254,254,1)), color-stop(71%,rgba(254,254,254,1)), color-stop(100%,rgba(229,17,21,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, rgba(229,17,21,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(229,17,21,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, rgba(229,17,21,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(229,17,21,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, rgba(229,17,21,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(229,17,21,1) 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e51115', endColorstr='#e51115',GradientType=1 ); /* IE6-9 */
+	animation-name: vader;
+	-moz-animation-name: vader;
+	-webkit-animation-name: vader;
+	-o-animation-name: vader;
+	-ms-animation-name: vader;
+	animation-duration: 2s;
+	-moz-animation-duration: 2s;
+	-webkit-animation-duration: 2s;
+	-o-animation-duration: 2s;
+	-ms-animation-duration: 2s;
+	animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	-o-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+}
+
+.obi-wan {
+	background: rgb(55,132,214); /* Old browsers */
+	background: linear-gradient(to right, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(55,132,214,1) 100%); /* W3C */
+	background: -moz-linear-gradient(left, rgba(55,132,214,1) 0%, rgba(254,254,254,1) 30%, rgba(254,254,254,1) 47%, rgba(254,254,254,1) 71%, rgba(55,132,214,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(55,132,214,1)), color-stop(30%,rgba(254,254,254,1)), color-stop(47%,rgba(254,254,254,1)), color-stop(71%,rgba(254,254,254,1)), color-stop(100%,rgba(55,132,214,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(55,132,214,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(55,132,214,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, rgba(55,132,214,1) 0%,rgba(254,254,254,1) 30%,rgba(254,254,254,1) 47%,rgba(254,254,254,1) 71%,rgba(55,132,214,1) 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3784d6', endColorstr='#3784d6',GradientType=1 ); /* IE6-9 */
+	animation-name: obi-wan;
+	-moz-animation-name: obi-wan;
+	-webkit-animation-name: obi-wan;
+	-o-animation-name: obi-wan;
+	-ms-animation-name: obi-wan;
+	animation-duration: 2s;
+	-moz-animation-duration: 2s;
+	-webkit-animation-duration: 2s;
+	-o-animation-duration: 2s;
+	-ms-animation-duration: 2s;
+	animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	-o-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+}
+
+div {
+	-webkit-transform : translateZ(0); 
+	-o-transform : translateZ(0); 
+	-moz-transform : translateZ(0); 
+	transform : translateZ(0); 
+}
+
+/* Animations */
+@keyframes yoda {
+	from { box-shadow: 0 0 10px #7EC855; }
+	50% { box-shadow: 0 0 16px #7EC855; }
+	to { box-shadow: 0 0 10px #7EC855; }
+}
+@-moz-keyframes yoda {
+	from { box-shadow: 0 0 10px #7EC855; }
+	50% { box-shadow: 0 0 16px #7EC855; }
+	to { box-shadow: 0 0 10px #7EC855; }
+}
+@-webkit-keyframes yoda {
+	from { box-shadow: 0 0 10px #7EC855; }
+	50% { box-shadow: 0 0 16px #7EC855; }
+	to { box-shadow: 0 0 10px #7EC855; }
+}
+@-o-keyframes yoda {
+	from { box-shadow: 0 0 10px #7EC855; }
+	50% { box-shadow: 0 0 16px #7EC855; }
+	to { box-shadow: 0 0 10px #7EC855; }
+}
+@-ms-keyframes yoda {
+	from { box-shadow: 0 0 10px #7EC855; }
+	50% { box-shadow: 0 0 16px #7EC855; }
+	to { box-shadow: 0 0 10px #7EC855; }
+}
+
+@keyframes vader {
+	from { box-shadow: 0 0 10px #e51115; }
+	50% { box-shadow: 0 0 16px #e51115; }
+	to { box-shadow: 0 0 10px #e51115; }
+}
+@-moz-keyframes vader {
+	from { box-shadow: 0 0 10px #e51115; }
+	50% { box-shadow: 0 0 16px #e51115; }
+	to { box-shadow: 0 0 10px #e51115; }
+}
+@-webkit-keyframes vader {
+	from { box-shadow: 0 0 10px #e51115; }
+	50% { box-shadow: 0 0 16px #e51115; }
+	to { box-shadow: 0 0 10px #e51115; }
+}
+@-o-keyframes vader {
+	from { box-shadow: 0 0 10px #e51115; }
+	50% { box-shadow: 0 0 16px #e51115; }
+	to { box-shadow: 0 0 10px #e51115; }
+}
+@-ms-keyframes vader {
+	from { box-shadow: 0 0 10px #e51115; }
+	50% { box-shadow: 0 0 16px #e51115; }
+	to { box-shadow: 0 0 10px #e51115; }
+}
+
+@keyframes windu {
+	from { box-shadow: 0 0 10px #ca74dd; }
+	50% { box-shadow: 0 0 16px #ca74dd; }
+	to { box-shadow: 0 0 10px #ca74dd; }
+}
+@-moz-keyframes windu {
+	from { box-shadow: 0 0 10px #ca74dd; }
+	50% { box-shadow: 0 0 16px #ca74dd; }
+	to { box-shadow: 0 0 10px #ca74dd; }
+}
+@-webkit-keyframes windu {
+	from { box-shadow: 0 0 10px #ca74dd; }
+	50% { box-shadow: 0 0 16px #ca74dd; }
+	to { box-shadow: 0 0 10px #ca74dd; }
+}
+@-o-keyframes windu {
+	from { box-shadow: 0 0 10px #ca74dd; }
+	50% { box-shadow: 0 0 16px #ca74dd; }
+	to { box-shadow: 0 0 10px #ca74dd; }
+}
+@-ms-keyframes windu {
+	from { box-shadow: 0 0 10px #ca74dd; }
+	50% { box-shadow: 0 0 16px #ca74dd; }
+	to { box-shadow: 0 0 10px #ca74dd; }
+}
+
+@keyframes obi-wan {
+	from { box-shadow: 0 0 10px #3784d6; }
+	50% { box-shadow: 0 0 16px #3784d6; }
+	to { box-shadow: 0 0 10px #3784d6; }
+}
+@-moz-keyframes obi-wan {
+	from { box-shadow: 0 0 10px #3784d6; }
+	50% { box-shadow: 0 0 16px #3784d6; }
+	to { box-shadow: 0 0 10px #3784d6; }
+}
+@-webkit-keyframes obi-wan {
+	from { box-shadow: 0 0 10px #3784d6; }
+	50% { box-shadow: 0 0 16px #3784d6; }
+	to { box-shadow: 0 0 10px #3784d6; }
+}
+@-o-keyframes obi-wan {
+	from { box-shadow: 0 0 10px #3784d6; }
+	50% { box-shadow: 0 0 16px #3784d6; }
+	to { box-shadow: 0 0 10px #3784d6; }
+}
+@-ms-keyframes obi-wan {
+	from { box-shadow: 0 0 10px #3784d6; }
+	50% { box-shadow: 0 0 16px #3784d6; }
+	to { box-shadow: 0 0 10px #3784d6; }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <!--For Logo-->
+    <img src="https://cdn3.ticketnew.com/tn/tn_logo/tn-logo-01.svg" alt="show image" style="width: 120px;">
+    <!-- for Location selector-->
+    <select name="location" id="location" style="width: 130px;position: relative; top:-15px; border: none; border-bottom: solid 1px blue;" >
+       <option style="opacity: 50%;">&#128269 Search</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Madurai">Madurai</option>
+        <option value="Virudhunagar">Virudhunagar</option>
+        <option value="Covai">Covai</option>
+        <option value="Trichy">Trichy</option>
+    </select>
+<!--Home & login Page Link-->
+    <Strong style="position: relative; top:-10px; left:20px;"><a href="index.html" style="text-decoration: none; font-size: larger;">Home</a></Strong>
+    <strong><a href="login.html" style="position: relative; left:900px;top: -10px; text-decoration: none;" >Log Out</a></strong>
+    <hr>
+    <!--BackGround Movie Image-->
+    <div>
+        <img src="https://tickets.nfsa.gov.au/img/organiser/bc873a18666145dc8dfe5ac412880eb6/item/hero/STAR%20WARS_%20THE%20EMPIRE%20STRIKES%20BACK%20.jpg" alt="show image" style="width: 1300px; filter: blur(5px);" >
+    </div>
+    <hr >
+    <!--Movie Image-->
+    <div style="border: 5px soild white; position: relative; left:200px;top:-410px;">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/51Ep5Pt7urL._SX336_BO1,204,203,200_.jpg" alt="show image" style="height: 380px;">
+    </div>
+<!--Movie Details-->
+    <div style="position: relative; left:500px; bottom: 750px; color:white">
+        <strong style="font-size: larger;position: relative;">Star Wars Episode V: The Empire Strikes Back (U)</strong>
+        <br><br><strong>English | U</strong>
+        <br><small>1980 ‧ Sci-fi/Action ‧ 2h 4m</small>
+
+        <br>
+        <br> <br>
+        Actors:Mark Hamill, Harrison Ford <br><br>
+        Director: Irvin Kershner <br><br>
+        Story by: George Lucas <br><br>
+        Music :Williams began <br>
+
+<br>
+        <strong>SYNOPSIS</strong> <br>
+        <small>After destroying the Death Star,<br>
+             the Rebel Alliance is forced to hole up on the freezing planet
+              of Hoth <br> while the Empire desperately tries to locate their secret base.</small>
+    </div>
+
+
+    <!--Lightsaber-->
+<div style="position: relative; left:800px; bottom: 700px;">
+    
+	<section class="the-demo">
+
+		<div class="example-item" style="position: relative; bottom:660px; right: 170px;  transform: rotate(270deg);">
+			<div class="lightsaber">
+				<label for="darth-vader-example"></label>
+				<input type="checkbox" id="darth-vader-example" checked="checked">
+				<div class="switch"></div>
+				<div class="plasma vader"></div>
+			</div>
+			
+		</div>
+		
+		<div class="example-item clearfix" style="position: relative; bottom: -650px; right: 1440px;  transform: rotate(-270deg);">
+			<div class="lightsaber">
+				<label for="obi-wan-example"></label>
+				<input type="checkbox" id="obi-wan-example">
+				<div class="switch"></div>
+				<div class="plasma obi-wan"></div>
+			</div>
+			<h3></h3>
+		</div>
+
+	</section>
+
+</div>
+      
+
+
+
+
+
+    <!--Date Selection-->
+    <div style="position: relative; bottom: 650px; ;left:200px; ">
+        <button style="border: none; background-color:black"><strong style="font-size:large;"> TODAY <br> 25  <br></strong>
+        </button> &nbsp; &nbsp; &nbsp; &nbsp;
+        <button style="border: none;  background-color: black"> <strong style="font-size:large;">TOM <br> 26  <br></strong>
+        </button>&nbsp; &nbsp; &nbsp;&nbsp;
+        <button style="border: none;  background-color: black;"><strong style="font-size:large;">WED <br> 27  <br></strong>
+        </button>&nbsp; &nbsp; &nbsp;&nbsp;
+        <button style="border: none;  background-color: black;"><strong style="font-size:large;">THU<br> 28  <br></strong>
+        </button>&nbsp; &nbsp; &nbsp;&nbsp;
+        <button style="border: none; background-color: black;"><strong style="font-size:large;">FRI <br> 29  <br></strong>
+        </button>&nbsp; &nbsp; &nbsp;&nbsp;
+        <button style="border: none;  background-color: black;"><strong style="font-size:large;">SAT <br> 30  <br></strong>
+        </button>&nbsp; &nbsp; &nbsp;&nbsp;
+       
+        <small style="color: orange; position: relative; left:100px;top:30px;"><strong style="font-size: x-large; ">.</strong>Filling Fast</small> &nbsp;&nbsp;
+        <small style="color: Red;  position: relative; left:100px;top:30px;"><strong style="font-size: x-large;">.</strong>Almost Full</small>
+    
+    <hr style="width: 800px; position: relative; right: 300px;">
+    </div>
+<div style="position: relative; left:220px; bottom: 650px;">
+    <div>
+        <strong style="font-size:small;">AGS Cinemas Maduravoyal</strong> <br>
+        <small>47, Alapakkam Main Rd</small><br>
+        <kbd style="background-color: gray;">2D</kbd>&nbsp;& <kbd style="background-color: gray;">3D</kbd>
+
+    </div>
+    <br><br>
+    <div>
+        <strong style="font-size:small;">Kasi Theatre</strong> <br>
+        <small>No:91, 92, Jawaharlal Nehru Rd</small><br>
+        <kbd style="background-color: gray;">4k</kbd>&nbsp; <kbd style="background-color: gray;">2D</kbd>&nbsp;& <kbd style="background-color: gray;">3D</kbd>
+
+    </div>
+    <hr style="position: relative; left: -220px;">
+<div style="position: relative; left:400px; bottom: 100px;">
+    <font style="font-size: large; color: green;"> 10:45Am</font >&nbsp;&nbsp; <font style="font-size: large;  color: orange;"> 12:50Pm</font> &nbsp;&nbsp;<font style="font-size: large; color: green;"> 3:35Am</font> &nbsp;&nbsp;<font style="font-size: large; color: red;"> 6:50Am</font>
+</div>
+<div style="position: relative; left:400px; bottom: 60px;">
+    <font style="font-size: large; color: orange;"> 11:25Am</font >&nbsp;&nbsp; <font style="font-size: large; color: green;"> 1:40Pm</font> &nbsp;&nbsp; <font style="font-size: large; color: red;"> 7:30Am</font>
+</div>
+</div>  
+<div style="position: relative; bottom: 650px;">
+    <h2>Recommended Movie / Series</h2>
+<div >
+    <img src="https://external-preview.redd.it/wmVWi4imgITo4px_9H9t521NBhoah1T_Mg9A2zwlGxE.png?auto=webp&s=3ee4b58b55fc7c954f3c916672df22a3b801eb8f" alt="show image" style="width: 300px; border: solid 1px; border-radius: 20px;">
+    <h3>Star Wars Episode III <br>
+        Revenge Of The Sith
+    </h3> 
+    <strong>English</strong>
+	
+</div>
+<div style="position: relative; left: 450px; bottom: 530px;"> 
+    <img src="https://images-na.ssl-images-amazon.com/images/I/91MMkv35K5L._RI_.jpg" alt="show image" style="width: 330px; border: solid 1px; border-radius: 20px;">
+    <h3>Star Wars Episode IV <br>
+        A New Hope
+    </h3>
+    <strong>English</strong> 
+</div>
+<hr style="position: relative; bottom: 500px;">
+<div style="position: relative; left: 950px; bottom: 1080px;"> 
+    <img src="https://hips.hearstapps.com/digitalspyuk.cdnds.net/18/16/1524213041-solo-pay-off-poster.jpg" alt="show image" style="width: 320px; border: solid 1px; border-radius: 20px;">
+    <h3>Solo
+            </h3>
+    <strong>English</strong>
+	
+</div>
+
+</div>
+
+<div style="position: relative; bottom: 1700px;">
+	<h2>You might also like</h2>
+  <div >
+	<img src="https://m.media-amazon.com/images/M/MV5BZWFlNzRmOTItZjY1Ni00ZjZkLTk5MDgtOGFhOTYzNWFhYzhmXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg" alt="show image" style="width: 300px; border: solid 1px; border-radius: 20px;">
+	<h3>Star Wars <br>
+		The Clone Wars</h3> 
+	<strong>English</strong>
+  </div>
+  <div style="position: relative; left: 450px; bottom: 550px;"> 
+	<img src="https://www.teahub.io/photos/full/293-2932068_flash-season-6-poster.jpg" alt="show image" style="width: 350px; border: solid 1px; border-radius: 20px;">
+	<h3>The Flash
+	</h3>
+	<strong>English</strong>
+  </div>
+  <div style="position: relative; left: 950px; bottom: 1070px;"> 
+	<img src="https://pbs.twimg.com/media/E7i9K9NUYAoXE_X.jpg" alt="show image" style="width: 300px; border: solid 1px; border-radius: 20px;">
+	<h3> Shang-Chi <br> & The Legend Of Ten Rings
+
+			</h3>
+	<strong>English| Tamil</strong>
+  </div>
+</body>
+</html>

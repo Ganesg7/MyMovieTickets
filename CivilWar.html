@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie Tickets</title>
+    <style>
+body{
+background-color: black;
+color: white;
+        }
+        button{
+            color: white;
+            opacity: 50%;
+        }
+        button:hover{
+            color: blue;
+            opacity: 100%;
+            
+        }
+        
+.container {
+  width:400px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 670px;
+  left: 800px;
+}
+
+.circle {
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border:1px solid #000;
+}
+
+.outer-lv3 {
+  background-image: linear-gradient(#870000,#FF4040,#870000);
+  height: 260px;
+  width: 260px;
+  -webkit-animation: turning 8s infinite linear;
+  animation: turning 8s infinite linear;
+}
+
+@-webkit-keyframes turning {
+    0%   {transform: rotate(0deg)}
+    100% {transform: rotate(360deg)}
+}
+
+@keyframes turning {
+    0%   {transform: rotate(0deg)}
+    100% {transform: rotate(360deg)}
+}
+
+.outer-lv2 {
+  background: #fff;
+  background-image: linear-gradient(#DBD9D9,#FAFAFA,#DBD9D9);
+  height: 210px;
+  width: 210px;
+}
+
+.outer-lv1 {
+  background-image: linear-gradient(#870000,#FF4040,#870000);
+  height: 150px;
+  width: 150px;
+}
+
+.center {
+  background-image: linear-gradient(#0846A8,#277AFF,#0846A8);
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border:1px solid #000;
+}
+
+.arrow {
+  border-top: 35px solid #EDE8E8;
+  border-bottom: 48px solid rgba(0,0,0,0.0);
+  border-left: 48px solid transparent;
+  border-right: 48px solid transparent;
+  position: absolute;
+  height: 0;
+  width: 0;
+}
+
+.top {
+  top: 35px;
+  left: 2px;
+}
+
+.left {
+  transform: rotate(72deg);
+  top: 16px;
+  left: -24px;
+}
+
+.right {
+  transform: rotate(-72deg);
+  top: 16px;
+  left: 25px;
+}
+
+
+
+
+
+
+.reactor-container {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+
+  position: relative;
+  bottom: 930px;
+  right: 500px;
+}
+.reactor-container-inner {
+  height: 238px;
+  width: 238px;
+  background-color: rgb(22, 26, 27);;
+  box-shadow: 0px 0px 4px 1px #52FEFE;
+}
+
+.circle {
+  border-radius: 50%;
+}
+.abs-center {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.core-inner {
+  width: 70px;
+  height: 70px;
+  border: 5px solid #1B4E5F;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 7px 5px #52FEFE, 0px 0px 10px 10px #52FEFE inset;
+}
+.core-outer {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #52FEFE;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 2px 1px #52FEFE, 0px 0px 10px 5px #52FEFE inset;
+}
+.core-wrapper {
+  width: 180px;
+  height: 180px;
+  background-color: #073c4b;
+  box-shadow: 0px 0px 5px 4px #52FEFE, 0px 0px 6px 2px #52FEFE inset;
+}
+.tunnel {
+  width: 220px;
+  height: 220px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 5px 1px #52FEFE, 0px 0px 5px 4px #52FEFE inset;
+}
+.coil-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: 3s infinite linear reactor-anim;
+}
+.coil {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  top: calc(50% - 110px);
+  left: calc(50% - 15px);
+  transform-origin: 15px 110px;
+  background-color:#073c4b;
+  box-shadow: 0px 0px 5px #52FEFE inset;
+}
+.coil-1 {
+  transform: rotate(0deg);
+}
+.coil-2 {
+  transform: rotate(45deg);
+}
+.coil-3 {
+  transform: rotate(90deg);
+}
+.coil-4 {
+  transform: rotate(135deg);
+}
+.coil-5 {
+  transform: rotate(180deg);
+}
+.coil-6 {
+  transform: rotate(225deg);
+}
+.coil-7 {
+  transform: rotate(270deg);
+}
+.coil-8 {
+  transform: rotate(315deg);
+}
+@keyframes reactor-anim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+    </style>
+</head>
+<body>
+    <!--For Logo-->
+    <img src="https://cdn3.ticketnew.com/tn/tn_logo/tn-logo-01.svg" alt="show image" style="width: 120px;">
+    <!-- for Location selector-->
+    <select name="location" id="location" style="width: 130px;position: relative; top:-15px; border: none; border-bottom: solid 1px blue;" >
+       <option style="opacity: 50%;">&#128269 Search</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Madurai">Madurai</option>
+        <option value="Virudhunagar">Virudhunagar</option>
+        <option value="Covai">Covai</option>
+        <option value="Trichy">Trichy</option>
+    </select>
+<!--Home & login Page Link-->
+    <Strong style="position: relative; top:-10px; left:20px;"> <a href="index.html" style="text-decoration: none; font-size: larger;">Home</a></Strong>
+    <strong><a href="login.html" style="position: relative; left:900px;top: -10px; text-decoration: none;" >Log Out</a></strong>
+    <hr>
+    <!--BackGround Movie Image-->
+    <div style="position: relative; left:50px">
+        <img src="https://i.pinimg.com/originals/23/81/68/238168fbf74aa41b5e3da5360b5b6abb.png" alt="show image" style="width: 1230px; height:500px;filter: blur(5px);" >
+    </div>
+    <hr >
+    <!--Movie Image-->
+    <div style="border: 5px soild white; position: relative; left:200px;top:-480px;">
+        <img src="https://lumiere-a.akamaihd.net/v1/images/p_captianamericacivilwar_19888_074030bd.jpeg?region=0%2C0%2C540%2C810" alt="show image" style="height: 380px; border: white 1px solid;">
+    </div>
+<!--Movie Details-->
+    <div style="position: relative; left:500px; bottom: 840px; color:white">
+        <strong style="font-size: larger;position: relative;">Captain America: Civil War</strong>
+        <br><br><strong>English | U/A</strong>
+        <br><small>2016 ‧ Action/Adventure ‧ 2h 27m</small>
+
+        <br>
+        <br> <br>
+        Actors:Chris Evans , Robert Downey Jr.  <br><br>
+        Director: Joe Russo, Anthony Russo <br><br>
+        Story by: Joe Simon, Mark Millar, Jack Kirby <br><br>
+        Music :Henry Jackman <br>
+
+<br>
+        <strong>SYNOPSIS</strong> <br>
+        <small>APolitical involvement in the Avengers' affairs causes a rift between <br> Captain America and Iron Man.</small>
+    </div>
+
+
+
+
+    <!--Cap Sheild-->
+
+
+    <div class="container">
+        <div class="circle outer-lv3">
+          <div class="circle outer-lv2">
+            <div class="circle outer-lv1">
+              <div class="center">
+                <div class="arrow top"></div>
+                <div class="arrow left"></div>
+                <div class="arrow right"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!--Iron Man Arc Reactor-->
+
+      <div class="fullpage-wrapper">
+        <div class="reactor-container">
+          <!-- dark circle behind the reactor -->
+          <div class="reactor-container-inner circle abs-center"></div>
+          <div class="tunnel circle abs-center"></div>
+          <div class="core-wrapper circle abs-center"></div>
+          <div class="core-outer circle abs-center"></div>
+          <div class="core-inner circle abs-center"></div>
+          <div class="coil-container">
+            <div class="coil coil-1"></div>
+            <div class="coil coil-2"></div>
+            <div class="coil coil-3"></div>
+            <div class="coil coil-4"></div>
+            <div class="coil coil-5"></div>
+            <div class="coil coil-6"></div>
+            <div class="coil coil-7"></div>
+            <div class="coil coil-8"></div>
+          </div>
+        </div>
+      </div>
+
+    <!--Date Selection-->
+    <div style="position: relative; bottom: 950px; ;left:200px; ">
+      <button style="border: none; background-color:black"><strong style="font-size:large;"> TODAY <br> 25  <br></strong>
+      </button> &nbsp; &nbsp; &nbsp; &nbsp;
+      <button style="border: none;  background-color: black"> <strong style="font-size:large;">TOM <br> 26  <br></strong>
+      </button>&nbsp; &nbsp; &nbsp;&nbsp;
+      <button style="border: none;  background-color: black;"><strong style="font-size:large;">WED <br> 27  <br></strong>
+      </button>&nbsp; &nbsp; &nbsp;&nbsp;
+      <button style="border: none;  background-color: black;"><strong style="font-size:large;">THU<br> 28  <br></strong>
+      </button>&nbsp; &nbsp; &nbsp;&nbsp;
+      <button style="border: none; background-color: black;"><strong style="font-size:large;">FRI <br> 29  <br></strong>
+      </button>&nbsp; &nbsp; &nbsp;&nbsp;
+      <button style="border: none;  background-color: black;"><strong style="font-size:large;">SAT <br> 30  <br></strong>
+      </button>&nbsp; &nbsp; &nbsp;&nbsp;
+     
+       
+        <small style="color: orange; position: relative; left:100px;top:30px;"><strong style="font-size: x-large; ">.</strong>Filling Fast</small> &nbsp;&nbsp;
+        <small style="color: Red;  position: relative; left:100px;top:30px;"><strong style="font-size: x-large;">.</strong>Almost Full</small>
+    
+    <hr style="width: 800px; position: relative; right: 300px;">
+    </div>
+<div style="position: relative; left:220px; bottom: 950px;">
+    <div>
+        <strong style="font-size:small;">AGS Cinemas Maduravoyal</strong> <br>
+        <small>47, Alapakkam Main Rd</small><br>
+        <kbd style="background-color: gray;">2D</kbd>&nbsp;& <kbd style="background-color: gray;">3D</kbd>
+
+    </div>
+    <br><br>
+    <div>
+        <strong style="font-size:small;">Kasi Theatre</strong> <br>
+        <small>No:91, 92, Jawaharlal Nehru Rd</small><br>
+        <kbd style="background-color: gray;">4k</kbd>&nbsp; <kbd style="background-color: gray;">2D</kbd>&nbsp;& <kbd style="background-color: gray;">3D</kbd>
+
+    </div>
+    <hr style="position: relative; left: -220px;">
+<div style="position: relative; left:400px; bottom: 100px;">
+    <font style="font-size: large; color: green;"> 10:45Am</font >&nbsp;&nbsp; <font style="font-size: large;  color: orange;"> 12:50Pm</font> &nbsp;&nbsp;<font style="font-size: large; color: green;"> 3:35Am</font> &nbsp;&nbsp;<font style="font-size: large; color: red;"> 6:50Am</font>
+</div>
+<div style="position: relative; left:400px; bottom: 60px;">
+    <font style="font-size: large; color: orange;"> 11:25Am</font >&nbsp;&nbsp; <font style="font-size: large; color: green;"> 1:40Pm</font> &nbsp;&nbsp; <font style="font-size: large; color: red;"> 7:30Am</font>
+</div>
+</div>  
+<div style="position: relative; bottom: 950px;">
+    <h2>Recommended Movie / Series</h2>
+<div >
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/37/Captain_America_The_First_Avenger_poster.jpg" alt="show image" style="width: 300px; border: solid 1px; border-radius: 20px;">
+    <h3>Captain America<br>
+        The First Avenger
+    </h3>
+    <strong>English</strong>
+    <hr style="position: relative; top: 20px;">
+</div>
+<div style="position: relative; left: 450px; bottom: 570px;"> 
+    <img src="https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_.jpg" alt="show image" style="width: 310px; border: solid 1px; border-radius: 20px;">
+    <h3>Avengers<br>
+        infinite War
+    </h3>
+    <strong>English</strong>
+</div>
+<div style="position: relative; left: 950px; bottom: 1130px;"> 
+    <img src="https://terrigen-cdn-dev.marvel.com/content/prod/1x/online_9.jpg" alt="show image" style="width: 310px; border: solid 1px; border-radius: 20px;">
+    <h3>Loki
+            </h3>
+    <strong>English | Tamil</strong> 
+</div>
+
+</div>
+<div style="position: relative; bottom: 1600px;">
+  <h2>You might also like</h2>
+<div >
+  <img src="https://m.media-amazon.com/images/M/MV5BOTY2NzFjODctOWUzMC00MGZhLTlhNjMtM2Y2ODBiNGY1ZWRiXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg" alt="show image" style="width: 300px; border: solid 1px; border-radius: 20px;">
+  <h3>Free Guy</h3>
+  <strong>English</strong>
+</div>
+<div style="position: relative; left: 450px; bottom: 510px;"> 
+  <img src="https://m.media-amazon.com/images/M/MV5BYjI3NDg0ZTEtMDEwYS00YWMyLThjYjktMTNlM2NmYjc1OGRiXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg" alt="show image" style="width: 300px; border: solid 1px; border-radius: 20px;">
+  <h3>Zack Snyder's Justice League
+  </h3>
+  <strong>English</strong>
+</div>
+<div style="position: relative; left: 950px; bottom: 1030px;"> 
+  <img src="https://cdn.europosters.eu/image/750/posters/arrow-legacy-i34043.jpg" alt="show image" style="width: 300px; border: solid 1px; border-radius: 20px;">
+  <h3>Arrow
+          </h3>
+  <strong>English </strong>
+</div>
+
+</div>
+</body>
+</html>

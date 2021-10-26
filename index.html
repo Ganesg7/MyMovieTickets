@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie Tickets</title>
+	<style>
+
+
+body{
+background-color: black;
+color: white;
+        }
+       
+button{
+	background-color: green;
+}
+button:hover{
+	background-color: red;
+	color: white;
+	
+}
+#Mname:hover{
+	color:yellow;
+}
+
+
+		* {box-sizing: border-box}
+		body {font-family: Verdana, sans-serif; margin:0}
+		.mySlides {display: none}
+		img {vertical-align: middle;}
+		
+		/* Slideshow container */
+		.slideshow-container {
+		  max-width: 1000px;
+		  position: relative;
+		  margin: auto;
+		}
+		
+		/* Next & previous buttons */
+		.prev, .next {
+		  cursor: pointer;
+		  position: absolute;
+		  top: 50%;
+		  width: auto;
+		  padding: 16px;
+		  margin-top: -22px;
+		  color: white;
+		  font-weight: bold;
+		  font-size: 18px;
+		  transition: 0.6s ease;
+		  border-radius: 0 3px 3px 0;
+		  user-select: none;
+		}
+		
+		/* Position the "next button" to the right */
+		.next {
+		  right: -210px;
+	
+		}
+		
+		/* On hover, add a black background color with a little bit see-through */
+		.prev:hover, .next:hover ,.numbertext:hover{
+			font-weight: bolder;
+		  background-color:white;
+		  color: black;
+		}
+		
+		/* Caption text */
+		.text {
+		  color: #f2f2f2;
+		  font-size: 15px;
+		  padding: 8px 12px;
+		  position: absolute;
+		  bottom: 8px;
+		  width: 100%;
+		  text-align: center;
+		}
+		
+		/* Number text (1/3 etc) */
+		.numbertext {
+		  color: #f2f2f2;
+		  font-size: 12px;
+		  padding: 8px 12px;
+		  position: absolute;
+		  top: 0;
+		}
+		
+		/* The dots/bullets/indicators */
+		.dot {
+		  cursor: pointer;
+		  height: 15px;
+		  width: 15px;
+		  margin: 0 2px;
+		  background-color: #bbb;
+		  border-radius: 50%;
+		  display: inline-block;
+		  transition: background-color 0.6s ease;
+		}
+		
+		.active, .dot:hover {
+		  background-color: #717171;
+		}
+		
+		/* Fading animation */
+		.fade {
+		  -webkit-animation-name: fade;
+		  -webkit-animation-duration: 1.5s;
+		  animation-name: fade;
+		  animation-duration: 1.5s;
+		}
+		
+		@-webkit-keyframes fade {
+		  from {opacity: .4} 
+		  to {opacity: 1}
+		}
+		
+		@keyframes fade {
+		  from {opacity: .4} 
+		  to {opacity: 1}
+		}
+		
+		/* On smaller screens, decrease text size */
+		@media only screen and (max-width: 300px) {
+		  .prev, .next,.text {font-size: 11px}
+		}
+		</style>
+</head>
+<body>
+    <!--For Logo-->
+    <img src="https://cdn3.ticketnew.com/tn/tn_logo/tn-logo-01.svg" alt="show image" style="width: 120px;">
+    <!-- for Location selector-->
+    <select name="location" id="location" style="width: 130px;position: relative; top:2px; border: none; border-bottom: solid 1px blue;" >
+       <option style="opacity: 50%;">&#128269 Search</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Madurai">Madurai</option>
+        <option value="Virudhunagar">Virudhunagar</option>
+        <option value="Covai">Covai</option>
+        <option value="Trichy">Trichy</option>
+    </select>
+<!--Home & login Page Link-->
+    <Strong style="position: relative; top:3px; left:20px;">Home</Strong>
+    <strong><a href="login.html" style="position: relative; left:800px;top: 10px; text-decoration: none;" >Log Out</a></strong>
+    <hr>
+  
+	<div class="slideshow-container" style="position: relative; right:150px;">
+
+		<div class="mySlides fade">
+		  <div class="numbertext">1 / 3</div>
+		  <img src="https://tickets.nfsa.gov.au/img/organiser/bc873a18666145dc8dfe5ac412880eb6/item/hero/STAR%20WARS_%20THE%20EMPIRE%20STRIKES%20BACK%20.jpg" alt="show image" style="width: 1300px; border: none;">
+		
+		  <div class="Mname" style="position: relative; bottom: 63px; left: 20px;" id="Mname">
+			<strong style="font-size: 15px;position: relative;">Star Wars Episode V: The Empire Strikes Back (U)</strong>
+			<br>English | U
+			<br><small>1980 ‧ Sci-fi/Action ‧ 2h 4m</small>
+		  </div>
+		  <div class="text"><a href="empire_strikes.html" style="text-transform: none;"><button style="border: 1px soild yellow; border-radius:10px; width: 150px; height: 40px; position: relative; top:-60px; left:120px; font-size: larger; font-family: 'Times New Roman', Times, serif; font-weight: bolder;">Ticket Booking</button></a></div>
+		</div>
+		
+		<div class="mySlides fade">
+		  <div class="numbertext">2 / 3</div>
+		  <img src="https://i.pinimg.com/originals/23/81/68/238168fbf74aa41b5e3da5360b5b6abb.png" style="width:1230px">
+		  
+		  <div class="Mname" style="position: relative; bottom: 80px; left: 20px;" id="Mname">
+			<strong style="font-size: 15px;position: relative;">Captain America: Civil War</strong>
+			<br><strong>English | U/A</strong>
+			<br><small>2016 ‧ Action/Adventure ‧ 2h 27m</small>
+		  </div>
+		  <div class="text"><a href="CivilWar.html" style="text-transform: none;"><button style="border: 1px soild yellow; border-radius:10px; width: 150px; top:-60px;height: 40px; font-size: larger; font-family: 'Times New Roman', Times, serif; font-weight: bolder;position: relative; left:120px;">Ticket Booking</button></a></div>
+
+		</div>
+		
+		<div class="mySlides fade">
+		  <div class="numbertext">3 / 3</div>
+		  <img src="https://www.teahub.io/photos/full/190-1908099_harry-potter-wallpapers-full-hd-awesome-wallpapers-harry.jpg" alt="show image" style="width: 1230px; height:500px;">
+		 
+		  <div class="Mname" style="position: relative; bottom: 80px; left: 20px;" id="Mname">
+			<strong style="font-size: 15px;position: relative;">Harry Potter & The Deathly Hallows Pt 1</strong>
+			<br><strong>English | U/A</strong>
+			<br><small>2010 ‧ Fantasy/Fantasy ‧ 2h 26m</small>
+		  </div>
+		  <div class="text"><a href="harrypotter.html" style="text-transform: none;"><button style="border: 1px soild yellow; border-radius:10px; width: 150px; height: 40px;  font-size: larger; font-family: 'Times New Roman', Times, serif; font-weight: bolder; position: relative; left:120px; top:-60px;">Ticket Booking</button></a></div>
+		</div>
+		
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		
+		</div>
+		<hr>
+		<br>
+		
+		<div style="text-align:center">
+		  <span class="dot" onclick="currentSlide(1)"></span> 
+		  <span class="dot" onclick="currentSlide(2)"></span> 
+		  <span class="dot" onclick="currentSlide(3)"></span> 
+		</div>
+		
+		
+
+<div style="position: relative; bottom: 0px;">
+    <h2>Upcoming Movies / Series</h2>
+<div >
+    <img src="https://m.media-amazon.com/images/M/MV5BYTExZTdhY2ItNGQ1YS00NjJlLWIxMjYtZTI1MzNlMzY0OTk4XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg" alt="show image" style="width: 310px; border: solid 1px; border-radius: 20px;">
+    <h3>The Batman<br>
+
+    </h3>
+    <strong>English</strong>
+</div>
+<div style="position: relative; left: 450px; bottom: 530px;"> 
+    <img src="https://m.media-amazon.com/images/M/MV5BZDhlMzY0ZGItZTcyNS00ZTAxLWIyMmYtZGQ2ODg5OWZiYmJkXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_.jpg" alt="show image" style="width: 310px; border: solid 1px; border-radius: 20px;">
+    <h3>The Mandalorian <br>
+        Season 3
+    </h3>
+    <strong>English</strong>
+</div>
+<div style="position: relative; left: 950px; bottom: 1110px;"> 
+    <img src="https://lh3.googleusercontent.com/proxy/nk4JLmndzdD89-cT1QyjjBsiNX4N3oW9z4uH-OqFV46R7BHM5KkwBXB-GlpRTqqNaNHimSLT4PbZ3IZZjvUogs2dmKk_I0wTUx0PeHDfqg7mpq8006cLqqGuTUWZHiLJcOvuMfkPVCdPWsKYxFMe" alt="show image" style="width: 310px; border: solid 1px; border-radius: 20px;">
+    <h3>Minions <br>Rise Of Gru
+            </h3>
+			<strong>English</strong>
+</div>
+
+</div>
+<div>
+	
+	
+	<div style="position: absolute; top: 1400px;">
+		
+		<hr style="position: relative; left:00px;width: 1400px;"> <h2>Now Streaming</h2>
+		<img src="https://m.media-amazon.com/images/M/MV5BOGYwYTA5M2QtMTk3Zi00ZjdjLWFkNDUtYzg4MjM0ZGI0MGU1XkEyXkFqcGdeQXVyODIyOTEyMzY@._V1_FMjpg_UX1000_.jpg" alt="show image" style="height: 400px; border: 1px white solid; border-radius: 20px;"> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+	
+		<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8dcefa82-ae05-477e-baa0-369f6aff11e6/d4sb10m-740432a4-3f40-4952-9615-0de17a5371e1.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7I
+		nBhdGgiOiJcL2ZcLzhkY2VmYTgyLWFlMDUtNDc3ZS1iYWEwLTM2OWY2YWZmMTFlNlwvZDRzYjEwbS03NDA0MzJhNC0zZjQwLTQ5NTItOTYxNS0wZGUxN2E1MzcxZTEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.-rL0a1FqiRvu9wkri0RGtIlbd2S7kgrg-Lwhjjtu5bQ" style="height: 400px; border: 1px white solid; border-radius: 20px;"> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+		<img src="https://upload.wikimedia.org/wikipedia/en/0/03/The_Mentalist_-_The_Complete_4th_Season.jpg" alt="show image" style="height: 400px; border: 1px white solid; border-radius: 20px;">
+	</div>
+	<div style="position: relative; bottom: 460px;">
+		<h3>What If...? 
+		</h3>
+		<strong>English</strong>
+	</div>
+	<div style="position: relative; bottom: 530px; left:480px;"> 
+		<h3>Sherlock Holmes 
+		</h3>
+		<strong>English</strong>
+	</div>
+	<div style="position: relative; bottom: 610px; left:970px;"> 
+		<h3>The Mentalist
+		</h3>
+		<strong>English</strong>
+	</div>
+</div>
+
+</body>
+</html>
+
+
+<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
+	
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+	
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+	
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("dot");
+	  if (n > slides.length) {slideIndex = 1}    
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+		  slides[i].style.display = "none";  
+	  }
+	  for (i = 0; i < dots.length; i++) {
+		  dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex-1].style.display = "block";  
+	  dots[slideIndex-1].className += " active";
+	  setTimeout(showSlides, 2000);
+	}
+	</script>
+
+
+
